@@ -12,20 +12,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "nodemon": "^2.0.12",
-    "prettier": "^2.3.2"
+    "@faker-js/faker": "^7.6.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.1"
   },
   "dependencies": {
-    "@hapi/boom": "^9.1.4",
+    "@hapi/boom": "^10.0.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "faker": "^5.5.3",
-    "joi": "^17.4.2"
-  },
-  "engines": {
-    "node": "14.x"
+    "express": "^4.18.2",
+    "joi": "^17.7.0"
   }
 }

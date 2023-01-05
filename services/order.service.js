@@ -8,16 +8,25 @@ class OrderService {
   }
   async create(data) {
     const newOrder = await models.Order.create(data);
-    return newOrder;
+    return newOrder.dataValues;
   }
 
   async addItem(data) {
+    const { orderId } = data;
+    await this.findOne(orderId);
     const newItem = await models.OrderProduct.create(data);
     return newItem;
   }
 
   async find() {
-    const orders = await models.Order.findAll();
+    const orders = await models.Order.findAll({
+      include: [{
+        association: 'customer',
+        include: ['user']
+      },
+      'items'
+    ]
+    });
     return orders;
   }
 
@@ -37,13 +46,15 @@ class OrderService {
   }
 
   async update(id, changes) {
-    return {
-      id,
-      changes,
-    };
+    const order = await this.findOne(id);
+    await order.update(changes);
+    const rta = await this.findOne(id);
+    return rta;
   }
 
   async delete(id) {
+    const order = await this.findOne(id);
+    await order.destroy();
     return { id };
   }
 

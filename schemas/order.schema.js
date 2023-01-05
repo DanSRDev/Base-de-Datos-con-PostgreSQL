@@ -15,7 +15,7 @@ const createOrderSchema = Joi.object({
 });
 
 const updateOrderSchema = Joi.object({
-  // falta agregar campos
+  customerId
 });
 
 const addItemSchema = Joi.object({

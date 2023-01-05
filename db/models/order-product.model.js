@@ -47,9 +47,7 @@ const OrderProductSchema = {
 
 class OrderProduct extends Model {
 
-  static associate(models) {
-    //
-  }
+  static associate() {}
 
   static config(sequelize) {
     return {
